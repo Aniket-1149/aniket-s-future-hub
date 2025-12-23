@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Send, Github, Linkedin, Mail } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Send, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,22 +10,61 @@ import { useToast } from '@/hooks/use-toast';
 const socialLinks = [
   { icon: Github, href: '#', label: 'GitHub' },
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
   { icon: Mail, href: 'mailto:your@email.com', label: 'Email' },
 ];
 
 const ContactSection = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    if (!formRef.current || isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // ✅ AUTO-REPLY EMAIL (with slight delay)
+      setTimeout(() => {
+        emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+          {
+            name: formData.name,
+            email: formData.email,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+      }, 1000);
+
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon!",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,9 +92,10 @@ const ContactSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
+                  name="name"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -65,6 +105,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Input
+                  name="email"
                   type="email"
                   placeholder="Your Email"
                   value={formData.email}
@@ -75,6 +116,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Textarea
+                  name="message"
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -82,8 +124,8 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full group glow-effect">
-                Send Message
+              <Button type="submit" size="lg" className="w-full group glow-effect" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>

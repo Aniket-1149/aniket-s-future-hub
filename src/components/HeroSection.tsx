@@ -3,6 +3,17 @@ import { ArrowDown, Download, Mail, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const handleResumeClick = () => {
+    // Open resume in new tab for preview
+    window.open('/resume active now.pdf', '_blank');
+    
+    //  Trigger download
+    // const link = document.createElement('a');
+    // link.href = '/resume active now.pdf';
+    // link.download = 'Aniket_Kumar_Singh_Resume.pdf';
+    // link.click();
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-16">
       {/* Gradient orbs */}
@@ -97,6 +108,7 @@ const HeroSection = () => {
               size="lg"
               variant="ghost"
               className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-8"
+              onClick={handleResumeClick}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume

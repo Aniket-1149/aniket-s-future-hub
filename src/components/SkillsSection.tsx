@@ -4,27 +4,27 @@ import { useRef } from 'react';
 
 const skills = {
   frontend: [
-    { name: 'HTML', icon: '🌐' },
-    { name: 'CSS', icon: '🎨' },
-    { name: 'JavaScript', icon: '⚡' },
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'Tailwind CSS', icon: '🎯' },
+    { name: 'HTML', icon: 'https://img.icons8.com/color/48/html-5--v1.png' },
+    { name: 'CSS', icon: 'https://img.icons8.com/color/48/css3.png' },
+    { name: 'JavaScript', icon: 'https://img.icons8.com/color/48/javascript--v1.png' },
+    { name: 'React', icon: 'https://img.icons8.com/color/48/react-native.png' },
+    { name: 'Next.js', icon: 'https://img.icons8.com/fluency/48/nextjs.png' },
+    { name: 'Tailwind CSS', icon: 'https://img.icons8.com/color/48/tailwindcss.png' },
   ],
   backend: [
-    { name: 'Node.js', icon: '💚' },
-    { name: 'Express.js', icon: '🚀' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'REST APIs', icon: '🔌' },
-    { name: 'WebSockets', icon: '🔗' },
+    { name: 'Node.js', icon: 'https://img.icons8.com/color/48/nodejs.png' },
+    { name: 'Express.js', icon: 'https://img.icons8.com/fluency/48/express-js.png' },
+    { name: 'MongoDB', icon: 'https://img.icons8.com/color/48/mongodb.png' },
+    { name: 'REST APIs', icon: 'https://img.icons8.com/color/48/api-settings.png' },
+    { name: 'WebSockets', icon: 'https://img.icons8.com/ios-filled/50/link--v1.png' },
   ],
   languages: [
-    { name: 'Java', icon: '☕' },
-    { name: 'Python', icon: '🐍' },
+    { name: 'Java', icon: 'https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png' },
+    { name: 'Python', icon: 'https://img.icons8.com/color/48/python--v1.png' },
   ],
   other: [
-    { name: 'ML Integration', icon: '🤖' },
-    { name: 'Git', icon: '📦' },
+    { name: 'ML Integration', icon: 'https://img.icons8.com/color/48/artificial-intelligence.png' },
+    { name: 'Git', icon: 'https://img.icons8.com/color/48/git.png' },
   ],
 };
 
@@ -37,9 +37,11 @@ const SkillCard = ({ skill, index }: { skill: { name: string; icon: string }; in
       whileHover={{ scale: 1.05, y: -5 }}
       className="glass-card rounded-xl p-4 flex flex-col items-center gap-2 cursor-pointer neon-border group"
     >
-      <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
-        {skill.icon}
-      </span>
+      <img 
+        src={skill.icon} 
+        alt={skill.name}
+        className="w-12 h-12 group-hover:scale-110 transition-transform duration-300"
+      />
       <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
         {skill.name}
       </span>

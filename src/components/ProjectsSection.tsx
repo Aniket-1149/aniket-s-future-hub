@@ -16,40 +16,59 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'IRIS 1.0 & IRIS 2.0',
-    description: 'National Award-winning smart AI-powered visual assistance system for visually impaired users.',
+    description: 'National Award-winning smart AI-powered visual assistance system for visually impaired users. IRIS 2.0 is under patent process.',
     techStack: ['Python', 'ML', 'MERN Stack', 'APIs'],
+    githubUrl: 'https://github.com/Aniket-1149/Project-IRIS',
     featured: true,
   },
   {
     title: 'Doctor Appointment Website',
     description: 'Full stack MERN application with dedicated admin panel for managing appointments.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+    githubUrl: 'https://github.com/Aniket-1149/Doctor-Appointment-Site',
   },
   {
     title: 'Real-Time Chat Application',
     description: 'Real-time messaging platform with WebSocket integration for instant communication.',
     techStack: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Socket.io'],
+    githubUrl: 'https://github.com/Aniket-1149/project-Real-Time-chat-Application',
   },
   {
     title: 'College Website Router',
     description: 'Single platform consolidating all colleges in the group with modern frontend.',
     techStack: ['React', 'Tailwind CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/Aniket-1149/College-Website-Router',
   },
   {
     title: 'Event Management System',
     description: 'Full stack solution for organizing and managing events with user authentication.',
     techStack: ['MERN Stack', 'REST APIs'],
+    githubUrl: 'https://github.com/Aniket-1149/Event-Management-Site',
   },
   {
     title: 'Mock E-Commerce Website',
     description: 'Complete e-commerce solution with cart, checkout, and payment integration.',
     techStack: ['MERN Stack', 'Stripe'],
+    githubUrl: 'https://github.com/Aniket-1149/Mock-e-Commerce',
   },
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const handleLinkClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  // When the card is clicked, prefer GitHub, then live URL
+  const handleCardClick = () => {
+    if (project.githubUrl) {
+      handleLinkClick(project.githubUrl);
+    } else if (project.liveUrl) {
+      handleLinkClick(project.liveUrl);
+    }
+  };
 
   return (
     <motion.div
@@ -58,7 +77,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -10 }}
-      className={`glass-card rounded-2xl overflow-hidden group neon-border ${
+      onClick={handleCardClick}
+      className={`glass-card rounded-2xl overflow-hidden group neon-border cursor-pointer ${
         project.featured ? 'md:col-span-2 lg:col-span-2' : ''
       }`}
     >
@@ -90,13 +110,31 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         
         <div className="flex gap-3">
           {project.liveUrl && (
-            <Button size="sm" variant="outline" className="gap-2">
+            <Button
+              size="sm"
+              variant="outline"
+              className="gap-2 cursor-pointer"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleLinkClick(project.liveUrl!);
+              }}
+            >
               <ExternalLink className="w-4 h-4" />
               Live Demo
             </Button>
           )}
           {project.githubUrl && (
-            <Button size="sm" variant="ghost" className="gap-2">
+            <Button
+              size="sm"
+              variant="ghost"
+              className="gap-2 cursor-pointer"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleLinkClick(project.githubUrl!);
+              }}
+            >
               <Github className="w-4 h-4" />
               GitHub
             </Button>
