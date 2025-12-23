@@ -1,4 +1,4 @@
-# Aniket’s Future Hub – Portfolio
+# Aniket’s  – Portfolio
 
 Hi, I’m **Aniket Kumar Singh** — a **Full Stack Developer** who loves building modern, performant web applications with the **MERN stack** and exploring the world of **AI & Machine Learning**.
 
@@ -154,7 +154,9 @@ I built a **mock e‑commerce website** to simulate a real online shopping exper
 
 If you’d like to talk about a project, an opportunity, or just connect:
 
-- You can reach me via **GitHub, LinkedIn, Instagram, or Email**  
-- All these links are available in the contact section of my portfolio  
+- **GitHub**: https://github.com/Aniket-1149  
+- **LinkedIn**: https://www.linkedin.com/in/aniketsingh1149/  
+- **Instagram**: https://www.instagram.com/___anikket.1149/  
+- **Email**: you can reach me directly via the contact form on my portfolio or by mailto link in the site
 
 Thanks for taking the time to explore my work. 🙌

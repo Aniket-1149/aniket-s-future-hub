@@ -8,9 +8,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/Aniket-1149', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/aniketsingh1149/', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/___anikket.1149/', label: 'Instagram' },
   { icon: Mail, href: 'mailto:your@email.com', label: 'Email' },
 ];
 
@@ -20,6 +20,7 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -116,6 +117,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Textarea
+                  ref={messageRef}
                   name="message"
                   placeholder="Your Message"
                   value={formData.message}
@@ -124,7 +126,16 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full group glow-effect" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full group glow-effect"
+                disabled={isSubmitting}
+                onClick={() => {
+                  // When tapping/clicking, bring the user back to the message field
+                  messageRef.current?.focus();
+                }}
+              >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>

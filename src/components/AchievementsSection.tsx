@@ -6,7 +6,8 @@ import { Trophy, Medal, Star } from 'lucide-react';
 const achievements = [
   {
     title: 'Winner – Smart India Hackathon (SIH) 2025',
-    description: 'National-level hackathon organized by the Government of India',
+    description: 'National-level hackathon organized by the Government of India. ',
+    link: 'https://www.linkedin.com/posts/aniketsingh1149_sih2k25-teamwork-innovation-activity-7405504162618118144-fkAe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJpZ7YBcKsHoxfyHQAVFXokgDPq_YHu9zk',
     icon: Trophy,
     color: 'text-yellow-400',
     bgColor: 'bg-yellow-400/10',
@@ -14,7 +15,8 @@ const achievements = [
   },
   {
     title: 'Finalist – HackHazard 2025',
-    description: "One of India's largest hackathons by Namespace Community",
+    description: "One of India's largest hackathons by Namespace Community. ",
+    link: 'https://certificate.givemycertificate.com/c/0f2adaa6-6c78-4c4f-a12f-2296448b0b97',
     icon: Medal,
     color: 'text-primary',
     bgColor: 'bg-primary/10',
@@ -77,7 +79,7 @@ const AchievementsSection = () => {
                 <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="glass-card rounded-2xl p-6 neon-border"
+                    className="glass-card rounded-2xl p-6 neon-border relative z-10 pointer-events-auto"
                   >
                     <div className="flex items-start gap-4">
                       <div className={`p-3 rounded-xl ${achievement.bgColor}`}>
@@ -91,6 +93,16 @@ const AchievementsSection = () => {
                         <p className="text-sm text-muted-foreground">
                           {achievement.description}
                         </p>
+                        {achievement.link && (
+                          <a
+                            href={achievement.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-flex items-center text-sm text-primary underline underline-offset-2 hover:text-primary/80 cursor-pointer relative z-20"
+                          >
+                            View proof
+                          </a>
+                        )}
                       </div>
                     </div>
                   </motion.div>
