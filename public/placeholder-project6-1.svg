@@ -1,0 +1,31 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="200" fill="#16213e" stroke="#0f3460" stroke-width="2" rx="8"/>
+  
+  <!-- Header -->
+  <rect x="80" y="80" width="240" height="25" fill="#2a9d8f" rx="4"/>
+  <text x="200" y="97" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="12">E-Shop Store</text>
+  
+  <!-- Product grid -->
+  <rect x="90" y="115" width="60" height="50" fill="#e94560" rx="4"/>
+  <text x="120" y="135" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">Laptop</text>
+  <text x="120" y="148" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">$999</text>
+  <rect x="115" y="153" width="10" height="8" fill="#f77f00" rx="2"/>
+  
+  <rect x="160" y="115" width="60" height="50" fill="#264653" rx="4"/>
+  <text x="190" y="135" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">Phone</text>
+  <text x="190" y="148" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">$699</text>
+  <rect x="185" y="153" width="10" height="8" fill="#f77f00" rx="2"/>
+  
+  <rect x="230" y="115" width="60" height="50" fill="#e76f51" rx="4"/>
+  <text x="260" y="135" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">Watch</text>
+  <text x="260" y="148" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="8">$299</text>
+  <rect x="255" y="153" width="10" height="8" fill="#f77f00" rx="2"/>
+  
+  <!-- Cart -->
+  <rect x="90" y="180" width="220" height="20" fill="#0f3460" stroke="#2a9d8f" stroke-width="1" rx="4"/>
+  <text x="200" y="193" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">🛒 3 items in cart - $1,997</text>
+  
+  <rect x="140" y="210" width="120" height="20" fill="#2a9d8f" rx="4"/>
+  <text x="200" y="223" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">Checkout</text>
+</svg>

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   const handleResumeClick = () => {
     // Open resume in new tab for preview
-    window.open('/resume active now.pdf', '_blank');
+    window.open('/RESUME FINAL CURRENT.pdf', '_blank');
     
     //  Trigger download
     // const link = document.createElement('a');

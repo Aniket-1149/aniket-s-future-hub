@@ -1,0 +1,21 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="200" fill="#16213e" stroke="#0f3460" stroke-width="2" rx="8"/>
+  
+  <!-- Online users list -->
+  <text x="80" y="80" fill="#f5f5f5" font-family="Arial" font-size="12">Online Users</text>
+  <circle cx="90" cy="100" r="6" fill="#2a9d8f"/>
+  <text x="105" y="105" fill="#f5f5f5" font-family="Arial" font-size="10">Alice</text>
+  <circle cx="90" cy="120" r="6" fill="#2a9d8f"/>
+  <text x="105" y="125" fill="#f5f5f5" font-family="Arial" font-size="10">Bob</text>
+  <circle cx="90" cy="140" r="6" fill="#f77f00"/>
+  <text x="105" y="145" fill="#f5f5f5" font-family="Arial" font-size="10">Charlie</text>
+  
+  <!-- Chat area -->
+  <rect x="180" y="80" width="140" height="120" fill="#0f3460" stroke="#264653" stroke-width="1" rx="4"/>
+  <text x="190" y="100" fill="#f5f5f5" font-family="Arial" font-size="9">Real-time messaging</text>
+  <text x="190" y="115" fill="#8a8a8a" font-family="Arial" font-size="8">Socket.io powered</text>
+  
+  <!-- Typing indicator -->
+  <text x="80" y="225" fill="#8a8a8a" font-family="Arial" font-size="8">Alice is typing...</text>
+</svg>

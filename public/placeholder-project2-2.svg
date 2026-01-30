@@ -1,0 +1,14 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="200" fill="#16213e" stroke="#0f3460" stroke-width="2" rx="8"/>
+  <rect x="80" y="80" width="240" height="30" fill="#0f3460" rx="4"/>
+  <rect x="90" y="120" width="60" height="15" fill="#e94560" rx="2"/>
+  <rect x="160" y="120" width="80" height="15" fill="#2a9d8f" rx="2"/>
+  <rect x="250" y="120" width="60" height="15" fill="#f77f00" rx="2"/>
+  <rect x="90" y="145" width="100" height="15" fill="#264653" rx="2"/>
+  <rect x="200" y="145" width="70" height="15" fill="#e76f51" rx="2"/>
+  <text x="200" y="185" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="12">Patient Dashboard</text>
+  <circle cx="120" cy="210" r="6" fill="#2a9d8f"/>
+  <circle cx="160" cy="210" r="6" fill="#e94560"/>
+  <circle cx="200" cy="210" r="6" fill="#f77f00"/>
+</svg>

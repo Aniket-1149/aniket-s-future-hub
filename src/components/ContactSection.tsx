@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Send, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Send, Github, Linkedin, Mail, Instagram, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Aniket-1149', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/aniketsingh1149/', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/___Aniket1149', label: 'X (Twitter)' },
   { icon: Instagram, href: 'https://www.instagram.com/___anikket.1149/', label: 'Instagram' },
   { icon: Mail, href: 'mailto:your@email.com', label: 'Email' },
 ];

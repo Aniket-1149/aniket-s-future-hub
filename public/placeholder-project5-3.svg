@@ -1,0 +1,36 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="200" fill="#16213e" stroke="#0f3460" stroke-width="2" rx="8"/>
+  
+  <!-- Analytics header -->
+  <rect x="80" y="80" width="240" height="25" fill="#264653" rx="4"/>
+  <text x="200" y="97" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="12">Event Analytics</text>
+  
+  <!-- Stats grid -->
+  <rect x="90" y="115" width="45" height="30" fill="#e94560" rx="4"/>
+  <text x="112" y="128" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="7">Events</text>
+  <text x="112" y="138" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">25</text>
+  
+  <rect x="145" y="115" width="45" height="30" fill="#2a9d8f" rx="4"/>
+  <text x="167" y="128" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="7">Attendees</text>
+  <text x="167" y="138" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">5.2K</text>
+  
+  <rect x="200" y="115" width="45" height="30" fill="#f77f00" rx="4"/>
+  <text x="222" y="128" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="7">Revenue</text>
+  <text x="222" y="138" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">$125K</text>
+  
+  <rect x="255" y="115" width="45" height="30" fill="#e76f51" rx="4"/>
+  <text x="277" y="128" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="7">Rating</text>
+  <text x="277" y="138" text-anchor="middle" fill="#f5f5f5" font-family="Arial" font-size="9">4.8★</text>
+  
+  <!-- Chart -->
+  <rect x="90" y="160" width="220" height="50" fill="#0f3460" stroke="#264653" stroke-width="1" rx="4"/>
+  <path d="M 110 190 Q 150 170 190 185 Q 230 175 270 165" stroke="#2a9d8f" stroke-width="2" fill="none"/>
+  <circle cx="110" cy="190" r="2" fill="#e94560"/>
+  <circle cx="150" cy="175" r="2" fill="#f77f00"/>
+  <circle cx="190" cy="185" r="2" fill="#2a9d8f"/>
+  <circle cx="230" cy="175" r="2" fill="#e76f51"/>
+  <circle cx="270" cy="165" r="2" fill="#264653"/>
+  
+  <text x="200" y="225" text-anchor="middle" fill="#8a8a8a" font-family="Arial" font-size="8">Monthly Growth</text>
+</svg>
